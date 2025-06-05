@@ -7,13 +7,23 @@
  * Requires at least: 5.8
  * Requires PHP:      8.0
  * Author:            David Kahadze
- * Author URI:        https://github.com/davknet
+ * Author URI:        https://github.com/davknet or  https://app-development.store
  * License:           GPL v2 or later
- * License URI:       
+ * License URI:       https://app-development.store
  * Update URI:        https://github.com/davknet/app-impulse-image-optimiser
  * Text Domain:       app-impulse-image-optimizer
  * Domain Path:       /languages
  */
 
 
+
+      //   plugin_dir_path(__FILE__ , );
+      //   plugins_url() plugins url 
+      //   includes_url() 
+      //   content_url() 
+      //   admin_url() 
+      //   site_url() 
+      //   home_url()
+
+     
 
