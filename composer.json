@@ -1,0 +1,18 @@
+{
+    "name": "davidkahadze/app-impulse-image-optimizer",
+    "authors": [
+        {
+            "name": "D.Kahadze",
+            "email": "davknet1@gmail.com"
+        }
+    ],
+    "require": {} ,
+    "autoload": {
+
+        "psr-4": {
+
+            "Inc\\" : "inc/" 
+
+        }
+    }
+}

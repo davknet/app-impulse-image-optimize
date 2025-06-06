@@ -17,7 +17,7 @@
 
 
 
-      //   plugin_dir_path(__FILE__ , );
+      //   plugin_dir_path( $pash , __FILE__ );
       //   plugins_url() plugins url 
       //   includes_url() 
       //   content_url() 
