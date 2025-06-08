@@ -6,7 +6,9 @@
             "email": "davknet1@gmail.com"
         }
     ],
-    "require": {} ,
+    "require": {
+        "illuminate/collections": "^12.17"
+    } ,
     "autoload": {
 
         "psr-4": {

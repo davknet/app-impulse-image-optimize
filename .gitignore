@@ -1,1 +1,10 @@
 /vendor/
+*.log
+*.zip
+*.env
+.DS_Store
+*.tar.gz
+*.rar
+.env.local
+.vscode/
+.idea/
