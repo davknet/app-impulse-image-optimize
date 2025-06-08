@@ -1,0 +1,14 @@
+<?php 
+
+
+
+
+
+
+
+
+
+abstract class MainObject{
+
+    
+}
