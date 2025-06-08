@@ -1,6 +1,11 @@
 <?php 
 
-
+/**
+ * 
+ * 
+ * 
+ * 
+ */
 
 
 
@@ -10,5 +15,8 @@
 
 abstract class MainObject{
 
-    
+
+
+
+
 }
