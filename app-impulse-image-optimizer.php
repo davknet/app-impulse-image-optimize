@@ -33,3 +33,21 @@ defined('ABSPATH') or die("Direct access to the script does not allowed");
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ){
     require_once __DIR__ . '/vendor/autoload.php';
 }
+
+
+ /* * 
+ * * ATTENTION! * * *
+ * * FOR DEVELOPMENT ONLY
+ * * SHOULD BE DISABLED ON PRODUCTION
+ */
+
+ error_reporting(E_ALL);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+
+// $log_path = plugin_dir_path( __FILE__ ) . 'logs/error_logs.log';
+
+ini_set('error_log',     plugin_dir_path( __FILE__ ) . 'logs/error_logs.log' );
+
+// ========================================= clear
+
