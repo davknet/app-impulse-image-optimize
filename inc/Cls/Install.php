@@ -24,13 +24,13 @@ class Install{
 
 <?php
 /**
- * CONF Plugin Name.
+ * App-Impulse Image Optimizer.
  *
- * @package   Plugin_Name
- * @author    CONF_Plugin_Author
- * @license   GPL-2.0+
- * @link      CONF_Author_Link
- * @copyright CONF_Plugin_Copyright
+ * @package    App-Impulse Image Optimizer
+ * @author     David Kahadze
+ * @license    GPL-2.0+
+ * @link       https://davidkahadze.com
+ * @copyright  Copyright 2025 David Kahadze
  */
 
 
