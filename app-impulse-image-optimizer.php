@@ -1,4 +1,5 @@
 <?php 
+use Inc\Cls\Install;
 /*
  * Plugin Name:       App-Impulse Image Optimizer
  * Plugin URI:        https://github.com/davknet/app-impulse-image-optimizer
@@ -17,8 +18,8 @@
 
 
 
-      //   plugin_dir_path( $pash , __FILE__ );
-      //   plugins_url() plugins url 
+      //   plugin_dir_path(  __FILE__ );
+      //   plugins_url() 
       //   includes_url() 
       //   content_url() 
       //   admin_url() 
@@ -27,11 +28,17 @@
 
 defined('ABSPATH') or die("Direct access to the script does not allowed");
 
+define('APP_IMP_DIR_PATH'    , plugin_dir_path(  __FILE__  ));
+define('APP_IMP_PLUGIN_URL'  , plugins_url() );
+
+
+
 
 
 
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ){
-    require_once __DIR__ . '/vendor/autoload.php';
+
+    require __DIR__ . '/vendor/autoload.php';
 }
 
 
@@ -41,9 +48,12 @@ if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ){
  * * SHOULD BE DISABLED ON PRODUCTION
  */
 
- error_reporting(E_ALL);
+error_reporting(E_ALL);
 ini_set('display_errors', 1 );
 ini_set('log_errors', 1);
+
+$image_optimizer = Install::get_instance();
+register_activation_hook( __FILE__, array($image_optimizer , 'activate') );
 
 // $log_path = plugin_dir_path( __FILE__ ) . 'logs/error_logs.log';
 
