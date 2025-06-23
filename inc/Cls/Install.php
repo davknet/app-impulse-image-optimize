@@ -86,6 +86,11 @@ class Install{
 
         add_action('wpmu_new_blog', array($this, 'activate_new_site'));
 
+
+
+
+        
+
     }
 
     /**
@@ -121,12 +126,11 @@ class Install{
      */
     public static function get_instance()
     {
-
         // If the single instance hasn't been set, set it now.
-        if (null == self::$instance) {
+        if (null == self::$instance)
+        {
             self::$instance = new self;
         }
-
         return self::$instance;
     }
 
@@ -143,26 +147,49 @@ class Install{
     public static function activate($network_wide)
     {
 
-        if (function_exists('is_multisite') && is_multisite()) {
+        if (function_exists('is_multisite') && is_multisite())
+        {
 
-            if ($network_wide) {
-
+            if ($network_wide)
+            {
                 // Get all blog ids
-                $blog_ids = self::get_blog_ids();
+                    $blog_ids = self::get_blog_ids();
 
-                foreach ($blog_ids as $blog_id) {
+                    foreach ($blog_ids as $blog_id) 
+                    {
 
-                    switch_to_blog($blog_id);
-                    self::single_activate();
-                }
-
-                restore_current_blog();
-
-            } else {
+                        switch_to_blog($blog_id);
+                        self::single_activate();
+                    }
+              restore_current_blog();
+            }else
+            {
                 self::single_activate();
             }
 
-        } else {
+        }else
+        {
+
+              if(version_compare( get_bloginfo('version') , '6.8.1' , '<' ))
+              {
+                require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+                deactivate_plugins( plugin_basename(__FILE__) );
+                error_log('Error: during activation of app-impulse-image-optimizer Plugin : Plugin version 6.8.1 or greater ' , current_time( 'timestamp' ) ) ;
+                wp_die( __('This plugin requires WordPress 6.8.1  or greater.' , 'app-impulse-image-optimizer' ) );
+                return ;
+             }
+
+            
+             if(version_compare( phpversion()  , '8.2.0' , '<'))
+             {
+                require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+                deactivate_plugins( plugin_basename(__FILE__) );
+                error_log('Error: during activation of app-impulse-image-optimizer Plugin :  PHP version  8.2.0  or greater ' , current_time( 'timestamp' ) ) ;
+                wp_die( __('This plugin requires PHP version  8.2.0  or greater.' ,  'app-impulse-image-optimizer'  ) );
+                return ;
+
+             }
+
             self::single_activate();
         }
 
@@ -202,6 +229,9 @@ class Install{
             }
 
         } else {
+
+           
+
             self::single_deactivate();
         }
 
@@ -282,9 +312,10 @@ class Install{
     {
 
         $domain = self::$PLUGIN_SLUG;
-        $locale = apply_filters('plugin_locale', get_locale(), $domain);
+        $locale = apply_filters('plugin_locale', get_locale(), $domain );
 
         load_textdomain($domain, trailingslashit(WP_LANG_DIR) . $domain . '/' . $domain . '-' . $locale . '.mo');
+
         load_plugin_textdomain($domain, false, basename(plugin_dir_path(dirname(__FILE__))) . '/languages/');
 
     }
