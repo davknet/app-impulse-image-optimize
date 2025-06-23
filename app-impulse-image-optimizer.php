@@ -55,6 +55,8 @@ ini_set('log_errors', 1);
 $image_optimizer = Install::get_instance();
 register_activation_hook( __FILE__, array($image_optimizer , 'activate') );
 
+register_deactivation_hook(__FILE__ , array( $image_optimizer , 'deactivate'));
+
 // $log_path = plugin_dir_path( __FILE__ ) . 'logs/error_logs.log';
 
 ini_set('error_log',     plugin_dir_path( __FILE__ ) . 'logs/error_logs.log' );
