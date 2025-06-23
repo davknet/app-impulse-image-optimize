@@ -17,13 +17,7 @@ namespace Inc\Cls;
  * @package App-Impulse-Image_optimizer 
  */
 
-
-
-
-class Install{
-
-<?php
-/**
+ /**
  * App-Impulse Image Optimizer.
  *
  * @package    App-Impulse Image Optimizer
@@ -33,12 +27,12 @@ class Install{
  * @copyright  Copyright 2025 David Kahadze
  */
 
+ defined('ABSPATH') or die("Direct access to the script does not allowed");
 
-defined('ABSPATH') or die("Direct access to the script does not allowed");
+
+class Install{
 
 
-class Plugin_Name
-{
 
     /**
      * Plugin version name
