@@ -1,7 +1,7 @@
 <?php 
 /*
  * Plugin Name:       App-Impulse Image Optimizer
- * Plugin URI:        https://github.com/yourusername/app-impulse-image-optimizer
+ * Plugin URI:        https://github.com/davknet/app-impulse-image-optimizer
  * Description:       Optimizes images automatically for improved performance and faster load times.
  * Version:           1.0.0
  * Requires at least: 5.8
