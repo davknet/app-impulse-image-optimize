@@ -53,6 +53,7 @@ ini_set('display_errors', 1 );
 ini_set('log_errors', 1);
 
 $image_optimizer = Install::get_instance();
+
 register_activation_hook( __FILE__, array($image_optimizer , 'activate') );
 
 register_deactivation_hook(__FILE__ , array( $image_optimizer , 'deactivate'));
